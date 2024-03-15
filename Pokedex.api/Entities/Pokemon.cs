@@ -1,7 +1,10 @@
-﻿namespace Pokedex.api.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Pokedex.api.Entities;
 
 public class Pokemon
 {
+    [Key]
     public int Pn { get; set; }
     public string? Nome { get; set; }
     public string? Tipoa { get; set; }
