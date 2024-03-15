@@ -23,3 +23,4 @@
 /Users/eduardorodrigues/Documents/Projetos/Pokedex.api/Pokedex.api/obj/Debug/net8.0/Pokedex.api.pdb
 /Users/eduardorodrigues/Documents/Projetos/Pokedex.api/Pokedex.api/obj/Debug/net8.0/Pokedex.api.genruntimeconfig.cache
 /Users/eduardorodrigues/Documents/Projetos/Pokedex.api/Pokedex.api/obj/Debug/net8.0/ref/Pokedex.api.dll
+/Users/eduardorodrigues/Documents/Projetos/Pokedex.api/Pokedex.api/obj/Debug/net8.0/Pokedex.api.sourcelink.json
