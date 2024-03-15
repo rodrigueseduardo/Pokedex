@@ -2,7 +2,7 @@
 
 public record class PokedexDto
 (
-    int pdn,
+    int Pn,
     string Nome,
     string Tipo,
     string Descricao

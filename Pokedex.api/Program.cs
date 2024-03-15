@@ -19,6 +19,10 @@ List<PokedexDto> pokedex = [
         )
 ];
 
-app.MapGet("/", () => "Hello World!");
+//lista toda a Pokédex
+app.MapGet("pokemons", () => pokedex);
+
+//lista os pokémons por número da pokédex
+app.MapGet("pokemons/{pn}", (int pn) => pokedex.Find(pokemon => pokemon.Pn == pn));
 
 app.Run();
