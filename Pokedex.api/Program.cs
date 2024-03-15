@@ -23,6 +23,11 @@ List<PokedexDto> pokedex = [
 app.MapGet("pokemons", () => pokedex);
 
 //lista os pokémons por número da pokédex
-app.MapGet("pokemons/{pn}", (int pn) => pokedex.Find(pokemon => pokemon.Pn == pn));
+app.MapGet("pokemons/{pn}", (int pn) =>
+{
+    PokedexDto? pokemon = pokedex.Find(pokemon => pokemon.Pn == pn);
+
+    return pokemon is null ? Results.NotFound() : Results.Ok(pokemon);
+});
 
 app.Run();
