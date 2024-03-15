@@ -1,4 +1,4 @@
 GET http://localhost:5007/pokemons
 
 ###
-GET http://localhost:5007/pokemons/152
+GET http://localhost:5007/pokemons/150

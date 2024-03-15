@@ -19,19 +19,21 @@ public static class PokedexEndpoints
         )
     ];
 
-    public static WebApplication MapPokedexEndpoints(this WebApplication app)
+    public static RouteGroupBuilder MapPokedexEndpoints(this WebApplication app)
     {
+
+        var group = app.MapGroup("pokemons");
         //lista toda a Pokédex
-        app.MapGet("pokemons", () => pokedex);
+        group.MapGet("/", () => pokedex);
 
         //lista os pokémons por número da pokédex
-        app.MapGet("pokemons/{pn}", (int pn) =>
+        group.MapGet("/{pn}", (int pn) =>
         {
             PokedexDto? pokemon = pokedex.Find(pokemon => pokemon.Pn == pn);
 
             return pokemon is null ? Results.NotFound() : Results.Ok(pokemon);
         });
 
-        return app;
+        return group;
     }
 }
