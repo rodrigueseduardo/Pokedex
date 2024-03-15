@@ -24,3 +24,9 @@
 /Users/eduardorodrigues/Documents/Projetos/Pokedex.api/Pokedex.api/obj/Debug/net8.0/Pokedex.api.genruntimeconfig.cache
 /Users/eduardorodrigues/Documents/Projetos/Pokedex.api/Pokedex.api/obj/Debug/net8.0/ref/Pokedex.api.dll
 /Users/eduardorodrigues/Documents/Projetos/Pokedex.api/Pokedex.api/obj/Debug/net8.0/Pokedex.api.sourcelink.json
+/Users/eduardorodrigues/Documents/Projetos/Pokedex.api/Pokedex.api/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/eduardorodrigues/Documents/Projetos/Pokedex.api/Pokedex.api/bin/Debug/net8.0/MinimalApis.Extensions.dll
+/Users/eduardorodrigues/Documents/Projetos/Pokedex.api/Pokedex.api/bin/Debug/net8.0/MiniValidation.dll
+/Users/eduardorodrigues/Documents/Projetos/Pokedex.api/Pokedex.api/obj/Debug/net8.0/Pokedex.api.csproj.AssemblyReference.cache
+/Users/eduardorodrigues/Documents/Projetos/Pokedex.api/Pokedex.api/obj/Debug/net8.0/Pokedex.api.MvcApplicationPartsAssemblyInfo.cs
+/Users/eduardorodrigues/Documents/Projetos/Pokedex.api/Pokedex.api/obj/Debug/net8.0/Pokedex..E32A9D65.Up2Date
