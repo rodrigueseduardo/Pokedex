@@ -1,9 +1,9 @@
 ﻿namespace Pokedex.api.Dtos;
 
-public record class PokedexDto
+public record class PokedexDetailsDto
 (
     int Pn,
     string Name,
-    string Element,
+    int ElementId,
     string Description
 );

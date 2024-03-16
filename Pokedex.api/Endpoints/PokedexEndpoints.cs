@@ -1,10 +1,13 @@
-﻿using Pokedex.api.Dtos;
+﻿using Pokedex.api.Data;
+using Pokedex.api.Dtos;
+using Pokedex.api.Entities;
+using Pokedex.api.Mapping;
 
 namespace Pokedex.api.Endpoints;
 
 public static class PokedexEndpoints
 {
-    private static readonly List<PokedexDto> pokedex = [
+    private static readonly List<PokedexSummaryDto> pokedex = [
     new(
         150,
         "Mewtwo",
@@ -28,11 +31,12 @@ public static class PokedexEndpoints
         group.MapGet("/", () => pokedex);
 
         //lista os pokémons por número da pokédex
-        group.MapGet("/{pn}", (int pn) =>
+        group.MapGet("/{pn}", (int pn, PokedexContext dbContext) =>
         {
-            PokedexDto? pokemon = pokedex.Find(pokemon => pokemon.Pn == pn);
+            Pokemon? pokemon = dbContext.Pokedex.Find(pn);
 
-            return pokemon is null ? Results.NotFound() : Results.Ok(pokemon);
+            return pokemon is null ?
+                Results.NotFound() : Results.Ok(pokemon.ToPokedexDetailsDto());
         });
 
         return group;
