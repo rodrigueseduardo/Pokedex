@@ -3,8 +3,7 @@
 public record class PokedexDto
 (
     int Pn,
-    string Nome,
-    string Tipoa,
-    string Tipob,
-    string Descricao
+    string Name,
+    string Element,
+    string Description
 );
