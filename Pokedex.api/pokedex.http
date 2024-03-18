@@ -4,15 +4,15 @@ GET http://localhost:5007/pokemons
 GET http://localhost:5007/pokemons/150
 
 ###
-POST http://localhost:5047/pokemons
+POST http://localhost:5007/pokemons
 Content-Type: application/json
 
 {
     "pn": 150,
     "name": "Mewtwo",
     "elementId": 11,
-    "description": "generic"
+    "description": "A Pokémon created by recombining Mew's genes. It's said to have the most savage heart among Pokémon. Mewtwo is a Pokémon that was created by genetic manipulation. However, even though the scientific power of humans created this Pokémon's body, they failed to endow Mewtwo with a compassionate heart."
 }
 
 ###
-DELETE http://localhost:5047/games/150
+DELETE http://localhost:5007/pokemons/150

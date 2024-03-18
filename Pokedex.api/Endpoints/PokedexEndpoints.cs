@@ -11,14 +11,6 @@ public static class PokedexEndpoints
 {
     const string GetPokedexEndpointName = "GetPokedex";
 
-    private static readonly List<PokedexSummaryDto> pokemons = [
-        new (
-            150,
-            "Mewtwo",
-            "Psychic",
-            "Generic Description"
-        )
-    ];
     public static RouteGroupBuilder MapPokedexEndpoints(this WebApplication app)
     {
 
@@ -58,7 +50,14 @@ public static class PokedexEndpoints
             dbContext.Pokemons.Add(pokemon);
             dbContext.SaveChanges();
 
-            return Results.CreatedAtRoute(GetPokedexEndpointName, new { pn = pokemon.Pn }, pokemon);
+            PokedexSummaryDto pokemonDto = new(
+                pokemon.Pn,
+                pokemon.Name,
+                pokemon.Element!.Name,
+                pokemon.Description
+            );
+
+            return Results.CreatedAtRoute(GetPokedexEndpointName, new { pn = pokemon.Pn }, pokemonDto);
         });
 
         //DELETE /pokemons/1
