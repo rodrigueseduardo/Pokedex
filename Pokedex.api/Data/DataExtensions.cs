@@ -2,7 +2,7 @@
 
 namespace Pokedex.api.Data;
 
-public static class DataExtentions
+public static class DataExtensions
 {
     public static async Task MigrateDbAsync(this WebApplication app)
     {

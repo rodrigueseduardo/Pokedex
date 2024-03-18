@@ -2,3 +2,17 @@ GET http://localhost:5007/pokemons
 
 ###
 GET http://localhost:5007/pokemons/150
+
+###
+POST http://localhost:5047/pokemons
+Content-Type: application/json
+
+{
+    "pn": 150,
+    "name": "Mewtwo",
+    "elementId": 15,
+    "description": "generic"
+}
+
+###
+DELETE http://localhost:5047/games/3
