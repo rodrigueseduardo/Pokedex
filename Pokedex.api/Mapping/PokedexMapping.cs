@@ -5,15 +5,26 @@ namespace Pokedex.api.Mapping;
 
 public static class PokedexMapping
 {
-        public static Pokemon ToEntity(this CreatePokemonDto pokemon)
+    public static Pokemon ToEntity(this CreatePokemonDto pokemon)
     {
-            return new Pokemon()
-            {
-                Pn = pokemon.Pn,
-                Name = pokemon.Name,
-                ElementId = pokemon.ElementId,
-                Description = pokemon.Description
-            };
+        return new Pokemon()
+        {
+            Pn = pokemon.Pn,
+            Name = pokemon.Name,
+            ElementId = pokemon.ElementId,
+            Description = pokemon.Description
+        };
+    }
+
+    public static Pokemon ToEntity(this UpdatePokemonDto pokemon, int id)
+    {
+        return new Pokemon()
+        {
+            Pn = pokemon.Pn,
+            Name = pokemon.Name,
+            ElementId = pokemon.ElementId,
+            Description = pokemon.Description
+        };
     }
 
     public static PokedexSummaryDto ToPokedexSummaryDto(this Pokemon pokemon)

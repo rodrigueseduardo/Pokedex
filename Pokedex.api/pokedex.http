@@ -8,11 +8,22 @@ POST http://localhost:5007/pokemons
 Content-Type: application/json
 
 {
-    "pn": 150,
-    "name": "Mewtwo",
+    "pn": 151,
+    "name": "Mew",
     "elementId": 11,
-    "description": "A Pokémon created by recombining Mew's genes. It's said to have the most savage heart among Pokémon. Mewtwo is a Pokémon that was created by genetic manipulation. However, even though the scientific power of humans created this Pokémon's body, they failed to endow Mewtwo with a compassionate heart."
+    "description": "A mythical Pokémon of South America which had been thought extinct. A growing number of people have seen it recently."
 }
 
 ###
-DELETE http://localhost:5007/pokemons/150
+PUT http://localhost:5007/pokemons/151
+Content-Type: application/json
+
+{
+    "pn": 151,
+    "name": "Mew",
+    "elementId": 11,
+    "description": "A mythical Pokémon of South America which had been thought extinct. A growing number of people have seen it recently."
+}
+
+###
+DELETE http://localhost:5007/pokemons/151

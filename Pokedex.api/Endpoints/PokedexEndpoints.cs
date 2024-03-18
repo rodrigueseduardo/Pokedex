@@ -35,29 +35,34 @@ public static class PokedexEndpoints
         .WithName(GetPokedexEndpointName);
 
         //POST /pokemons
-        group.MapPost("/", (CreatePokemonDto newPokemon, PokedexContext dbContext) =>
+        group.MapPost("/", async (CreatePokemonDto newPokemon, PokedexContext dbContext) =>
         {
-            Pokemon pokemon = new()
-            {
-                Pn = newPokemon.Pn,
-                Name = newPokemon.Name,
-                Element = dbContext.Elements.Find(newPokemon.ElementId),
-                ElementId = newPokemon.ElementId,
-                Description = newPokemon.Description
-
-            };
+            Pokemon pokemon = newPokemon.ToEntity();
 
             dbContext.Pokemons.Add(pokemon);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
 
-            PokedexSummaryDto pokemonDto = new(
-                pokemon.Pn,
-                pokemon.Name,
-                pokemon.Element!.Name,
-                pokemon.Description
-            );
+            return Results.CreatedAtRoute(GetPokedexEndpointName, new { pn = pokemon.Pn },
+            pokemon.ToPokedexDetailsDto());
+        });
 
-            return Results.CreatedAtRoute(GetPokedexEndpointName, new { pn = pokemon.Pn }, pokemonDto);
+        //PUT /games/1
+        group.MapPut("/{pn}", async (int pn, UpdatePokemonDto updatedPokemon, PokedexContext dbContext) =>
+        {
+            var existingPokemon = await dbContext.Pokemons.FindAsync(pn);
+
+            if (existingPokemon is null)
+            {
+                return Results.NotFound();
+            }
+
+            dbContext.Entry(existingPokemon)
+                        .CurrentValues
+                        .SetValues(updatedPokemon.ToEntity(pn));
+
+            await dbContext.SaveChangesAsync();
+
+            return Results.NoContent();
         });
 
         //DELETE /pokemons/1
