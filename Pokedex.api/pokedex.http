@@ -10,9 +10,9 @@ Content-Type: application/json
 {
     "pn": 150,
     "name": "Mewtwo",
-    "elementId": 15,
+    "elementId": 11,
     "description": "generic"
 }
 
 ###
-DELETE http://localhost:5047/games/3
+DELETE http://localhost:5047/games/150
