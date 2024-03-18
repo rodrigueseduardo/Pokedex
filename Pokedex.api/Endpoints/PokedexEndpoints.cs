@@ -10,21 +10,6 @@ public static class PokedexEndpoints
 {
 
     const string GetPokedexEndpointsName = "GetPokedex";
-    private static readonly List<PokedexSummaryDto> pokedex = [
-    new(
-        150,
-        "Mewtwo",
-        "Psychic",
-        "Generic Description"
-        ),
-    new(
-        151,
-        "Mew",
-        "Psychic",
-        "Generic Description"
-        )
-    ];
-
     public static RouteGroupBuilder MapPokedexEndpoints(this WebApplication app)
     {
 
@@ -45,7 +30,8 @@ public static class PokedexEndpoints
 
             return pokemon is null ?
                 Results.NotFound() : Results.Ok(pokemon.ToPokedexDetailsDto());
-        });
+        })
+        .WithName(GetPokedexEndpointsName);
 
         return group;
     }
