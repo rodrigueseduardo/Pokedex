@@ -10,6 +10,8 @@ var app = builder.Build();
 
 app.MapPokedexEndpoints();
 
-app.MigrateDb();
+app.MapElementsEndpoints();
+
+await app.MigrateDbAsync();
 
 app.Run();

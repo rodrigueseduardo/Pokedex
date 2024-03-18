@@ -7,7 +7,7 @@ public static class PokedexMapping
 {
     public static PokedexSummaryDto ToPokedexSummaryDto(this Pokemon pokemon)
     {
-        return new (
+        return new(
             pokemon.Pn,
             pokemon.Name,
             pokemon.Element!.Name,
@@ -15,9 +15,9 @@ public static class PokedexMapping
         );
     }
 
-        public static PokedexDetailsDto ToPokedexDetailsDto(this Pokemon pokemon)
+    public static PokedexDetailsDto ToPokedexDetailsDto(this Pokemon pokemon)
     {
-        return new (
+        return new(
             pokemon.Pn,
             pokemon.Name,
             pokemon.ElementId,
