@@ -1,7 +1,7 @@
 GET http://localhost:5007/pokemons
 
 ###
-GET http://localhost:5007/pokemons/150
+GET http://localhost:5007/pokemons/151
 
 ###
 POST http://localhost:5007/pokemons
@@ -11,6 +11,7 @@ Content-Type: application/json
     "pn": 151,
     "name": "Mew",
     "elementId": 11,
+    "elementaId": 99,
     "description": "A mythical Pokémon of South America which had been thought extinct. A growing number of people have seen it recently."
 }
 
@@ -22,6 +23,7 @@ Content-Type: application/json
     "pn": 151,
     "name": "Mew",
     "elementId": 11,
+    "elementaId": 99,
     "description": "A mythical Pokémon of South America which had been thought extinct. A growing number of people have seen it recently."
 }
 

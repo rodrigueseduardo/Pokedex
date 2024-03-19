@@ -20,6 +20,7 @@ public static class PokedexEndpoints
         group.MapGet("/", async (PokedexContext dbContext) =>
             await dbContext.Pokemons
                       .Include(pokemon => pokemon.Element)
+                      .Include(pokemon => pokemon.Elementa)
                       .Select(pokemon => pokemon.ToPokedexSummaryDto())
                       .AsNoTracking()
                       .ToListAsync());

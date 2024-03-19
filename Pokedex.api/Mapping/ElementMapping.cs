@@ -9,4 +9,8 @@ public static class ElementMapping
     {
         return new ElementDto(element.Id, element.Name);
     }
+        public static ElementDto ToDto(this Elementa elementa)
+    {
+        return new ElementDto(elementa.Id, elementa.Name);
+    }
 }

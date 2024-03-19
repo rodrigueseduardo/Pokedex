@@ -12,6 +12,7 @@ public static class PokedexMapping
             Pn = pokemon.Pn,
             Name = pokemon.Name,
             ElementId = pokemon.ElementId,
+            ElementaId = pokemon.ElementaId,
             Description = pokemon.Description
         };
     }
@@ -23,6 +24,7 @@ public static class PokedexMapping
             Pn = pokemon.Pn,
             Name = pokemon.Name,
             ElementId = pokemon.ElementId,
+            ElementaId = pokemon.ElementaId,
             Description = pokemon.Description
         };
     }
@@ -33,6 +35,7 @@ public static class PokedexMapping
             pokemon.Pn,
             pokemon.Name,
             pokemon.Element!.Name,
+            pokemon.Elementa!.Name,
             pokemon.Description!
         );
     }
@@ -43,6 +46,7 @@ public static class PokedexMapping
             pokemon.Pn,
             pokemon.Name,
             pokemon.ElementId,
+            pokemon.ElementaId,
             pokemon.Description!
         );
     }

@@ -15,6 +15,11 @@ public static class ElementsEndpoints
                             .Select(element => element.ToDto())
                             .AsNoTracking()
                             .ToListAsync());
+        group.MapGet("elementsa", async (PokedexContext dbContext) =>
+            await dbContext.Elementsa
+                            .Select(elementa => elementa.ToDto())
+                            .AsNoTracking()
+                            .ToListAsync());
 
         return group;
     }
